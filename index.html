@@ -58,6 +58,43 @@
 }
 
 
+    /* Make the whole card feel clickable + add a subtle arrow */
+.card-link .card{
+  position: relative;
+  transition: transform .18s ease, box-shadow .22s ease, background .22s ease;
+}
+
+.card-link .card::after{
+  content: "↗";
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.75);
+  color: rgba(11,15,23,.75);
+  font-weight: 900;
+  opacity: 0;
+  transform: translateY(3px);
+  transition: opacity .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+
+.card-link:hover .card::after{
+  opacity: 1;
+  transform: translateY(0);
+  box-shadow: 0 14px 30px rgba(11,15,23,.10);
+}
+
+.card-link:focus-visible .card::after{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
     .nav{
       display:flex;
       align-items:center;
