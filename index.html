@@ -1,134 +1,424 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Narayanan Sankar | Engineering Leader</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            color: #111;
-            background-color: #ffffff;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 60px 24px;
-        }
-        h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-        h2 {
-            margin-top: 60px;
-            font-size: 28px;
-            font-weight: 600;
-        }
-        p {
-            font-size: 18px;
-            color: #444;
-        }
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 24px;
-            border-bottom: 1px solid #eee;
-        }
-        .nav a {
-            text-decoration: none;
-            color: #111;
-            margin-left: 24px;
-            font-weight: 500;
-        }
-        .metrics {
-            display: flex;
-            gap: 40px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-        .metric {
-            font-size: 20px;
-            font-weight: 600;
-        }
-        footer {
-            margin-top: 80px;
-            padding: 40px 24px;
-            border-top: 1px solid #eee;
-            font-size: 14px;
-            color: #777;
-        }
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 34px;
-            }
-            .metrics {
-                flex-direction: column;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sankar Narayanan | Engineering Leader</title>
+  <meta name="description" content="Engineering leader building AI, analytics, and platform systems at scale. Case studies from Workday, workforce planning optimization, and Thalamus platform modernization." />
+
+  <style>
+    :root{
+      --bg: #ffffff;
+      --text: #0b0f17;
+      --muted: rgba(11,15,23,.72);
+      --muted2: rgba(11,15,23,.52);
+      --border: rgba(11,15,23,.10);
+      --card: rgba(11,15,23,.03);
+      --accent: #1b4dff; /* subtle, modern blue */
+      --shadow: 0 14px 40px rgba(11,15,23,.08);
+      --radius: 18px;
+      --max: 1040px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a{ color: var(--accent); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+
+    .wrap{ max-width: var(--max); margin: 0 auto; padding: 0 22px; }
+    .topbar{
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,.82);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      z-index: 10;
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding: 16px 0;
+      gap: 16px;
+    }
+
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight: 700;
+      letter-spacing: .2px;
+      color: var(--text);
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(27,77,255,.12);
+    }
+
+    .navlinks{
+      display:flex; align-items:center; gap: 18px;
+      flex-wrap: wrap;
+      justify-content:flex-end;
+    }
+    .navlinks a{
+      color: var(--text);
+      font-weight: 600;
+      font-size: 14px;
+      opacity: .86;
+    }
+    .navlinks a:hover{ opacity: 1; text-decoration: none; }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 14px;
+      border: 1px solid var(--border);
+      color: var(--text);
+      background: transparent;
+      transition: transform .08s ease, box-shadow .2s ease, background .2s ease;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 24px rgba(11,15,23,.08); text-decoration:none; }
+    .btn.primary{
+      background: var(--accent);
+      color: white;
+      border-color: transparent;
+    }
+    .btn.primary:hover{ box-shadow: 0 16px 30px rgba(27,77,255,.22); }
+
+    /* HERO */
+    .hero{
+      padding: 72px 0 40px;
+    }
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(27,77,255,.08);
+      color: rgba(27,77,255,.95);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: .2px;
+    }
+    h1{
+      margin: 16px 0 14px;
+      font-size: clamp(34px, 4.8vw, 58px);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+    .lead{
+      margin: 0 0 22px;
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 78ch;
+    }
+    .chips{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 14px 0 18px;
+    }
+    .chip{
+      font-size: 13px;
+      font-weight: 700;
+      color: rgba(11,15,23,.78);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.7);
+      border-radius: 999px;
+      padding: 8px 12px;
+    }
+    .cta{
+      display:flex; gap: 12px; flex-wrap: wrap; align-items:center;
+      margin: 18px 0 6px;
+    }
+
+    /* SECTIONS */
+    section{ padding: 44px 0; }
+    .section-title{
+      margin: 0 0 10px;
+      font-size: 22px;
+      letter-spacing: -0.01em;
+    }
+    .section-sub{
+      margin: 0 0 18px;
+      color: var(--muted);
+      max-width: 85ch;
+      font-size: 16px;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 14px;
+    }
+    .grid-2{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 14px;
+    }
+    .card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: none;
+    }
+    .card:hover{
+      box-shadow: var(--shadow);
+      background: rgba(255,255,255,.9);
+      transition: box-shadow .2s ease, background .2s ease;
+    }
+    .card h3{
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .card p{
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 14.5px;
+    }
+    .meta{
+      display:flex; flex-wrap:wrap; gap: 8px;
+      margin-top: 10px;
+    }
+    .tag{
+      font-size: 12px;
+      font-weight: 700;
+      color: rgba(11,15,23,.66);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.7);
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+
+    .metrics{
+      display:grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .metric{
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      background: rgba(255,255,255,.65);
+    }
+    .metric .num{
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+    .metric .lbl{
+      margin-top: 4px;
+      font-size: 12.5px;
+      color: var(--muted2);
+      font-weight: 700;
+    }
+
+    .bullets{
+      margin: 14px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 92ch;
+    }
+    .bullets li{ margin: 8px 0; }
+
+    .contact{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items:center;
+    }
+
+    footer{
+      padding: 36px 0 56px;
+      border-top: 1px solid var(--border);
+      color: var(--muted2);
+      font-size: 13px;
+    }
+
+    @media (max-width: 920px){
+      .grid-3{ grid-template-columns: 1fr; }
+      .grid-2{ grid-template-columns: 1fr; }
+      .metrics{ grid-template-columns: 1fr 1fr; }
+      .hero{ padding-top: 54px; }
+    }
+  </style>
 </head>
+
 <body>
-
-    <div class="nav">
-        <div><strong>Narayanan Sankar</strong></div>
-        <div>
-            <a href="#case-studies">Case Studies</a>
-            <a href="#ai-pov">AI & Data POV</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </div>
-
-    <div class="container">
-        <h1>Engineering Leader Building AI, Analytics & Platform Systems at Scale</h1>
-
-        <p>
-            I build and scale engineering organizations that modernize enterprise architecture, 
-            ship durable data platforms, and integrate AI into real customer workflows. 
-            Over two decades, I’ve led teams delivering analytics infrastructure serving thousands of customers and billions of queries.
-        </p>
-
-        <div class="metrics">
-            <div class="metric">20+ Years Engineering Leadership</div>
-            <div class="metric">120+ Engineers Built & Scaled</div>
-            <div class="metric">6,000+ Enterprise Customers Served</div>
+  <div class="topbar">
+    <div class="wrap">
+      <div class="nav">
+        <div class="brand">
+          <span class="dot"></span>
+          <span>Sankar Narayanan</span>
         </div>
 
-        <h2 id="case-studies">Selected Case Studies</h2>
-
-        <p><strong>Workday Analytics Platform</strong><br>
-        Built and scaled analytics infrastructure powering enterprise HR and finance workflows, 
-        growing engineering from early-stage incubation to a global team supporting thousands of customers.</p>
-
-        <p><strong>Workforce Planning Constraint Engine</strong><br>
-        Designed and delivered constraint-based scheduling systems solving large-scale optimization challenges for enterprise workforce planning.</p>
-
-        <p><strong>Thalamus API Gateway + AI Integration</strong><br>
-        Re-architected cloud infrastructure and introduced AI-driven features to modernize data exchange and decision workflows.</p>
-
-        <h2 id="ai-pov">AI & Data POV</h2>
-
-        <p>
-            Enterprises should not treat AI as a feature layer. The durable advantage lies in building 
-            strong data foundations, operational analytics, and embedding intelligence directly into workflows.
-            Agentic systems will reshape internal productivity and customer interaction models over the next decade.
-        </p>
-
-        <h2 id="contact">Contact</h2>
-
-        <p>
-            LinkedIn: <a href="https://www.linkedin.com/in/sankar-narayanan-2645b27/" target="_blank">Your LinkedIn</a><br>
-            Email: slsankargm@gmail.com
-            Resume: <a href="Sankar_Narayanan.pdf" target="_blank">Download PDF</a><br>
-        </p>
+        <div class="navlinks">
+          <a href="#case-studies">Case Studies</a>
+          <a href="#leadership">Leadership</a>
+          <a href="#pov">AI & Data POV</a>
+          <a href="#contact">Contact</a>
+          <a class="btn" href="Sankar_Narayanan_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+        </div>
+      </div>
     </div>
+  </div>
+
+  <main class="wrap">
+    <header class="hero" id="top">
+      <div class="kicker">AI • Analytics • Platform • Scale</div>
+
+      <h1>Engineering leader building AI, analytics, and platform systems at scale.</h1>
+
+      <p class="lead">
+        I build and scale engineering organizations that modernize enterprise architecture, ship durable data platforms,
+        and integrate AI into real customer workflows—combining platform discipline with product delivery and operational rigor.
+      </p>
+
+      <div class="chips">
+        <span class="chip">Enterprise SaaS</span>
+        <span class="chip">Data Platforms</span>
+        <span class="chip">Observability & Reliability</span>
+        <span class="chip">Security & Governance</span>
+        <span class="chip">Applied AI</span>
+        <span class="chip">Org Building</span>
+      </div>
+
+      <div class="cta">
+        <a class="btn primary" href="#case-studies">View Case Studies</a>
+        <a class="btn" href="Sankar_Narayanan_Resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+        <a class="btn" href="https://www.linkedin.com/in/sankar-narayanan-2645b27/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+
+      <div class="metrics" aria-label="Key metrics">
+        <div class="metric"><div class="num">20+ years</div><div class="lbl">Engineering leadership</div></div>
+        <div class="metric"><div class="num">3 → 120+</div><div class="lbl">Org scale experience</div></div>
+        <div class="metric"><div class="num">6,000+</div><div class="lbl">Enterprise customers served</div></div>
+        <div class="metric"><div class="num">Billions</div><div class="lbl">Queries & events processed</div></div>
+      </div>
+
+      <ul class="bullets">
+        <li><strong>Workday Analytics:</strong> built and scaled a multi-tenant analytics platform serving thousands of customers with enterprise reliability.</li>
+        <li><strong>Workforce Planning:</strong> designed constraint-based optimization for complex scheduling and labor compliance scenarios.</li>
+        <li><strong>Thalamus:</strong> led platform modernization and integration gateway capabilities; introduced AI-driven workflow assistance.</li>
+      </ul>
+    </header>
+
+    <section id="case-studies">
+      <h2 class="section-title">Selected Case Studies</h2>
+      <p class="section-sub">
+        A few representative efforts that show how I approach platform architecture, scale, reliability, and customer outcomes.
+        (We can expand each into dedicated pages next.)
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Workday Analytics at Scale</h3>
+          <p>Scaled analytics capabilities powering enterprise HR/finance workflows with governed metrics, performance, and multi-tenant reliability.</p>
+          <div class="meta">
+            <span class="tag">Data platform</span><span class="tag">Multi-tenant</span><span class="tag">Performance</span><span class="tag">Governance</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Workforce Planning Optimization</h3>
+          <p>Constraint-based scheduling and optimization for large employers—capturing demand patterns, availability, and labor rules with explainable results.</p>
+          <div class="meta">
+            <span class="tag">Optimization</span><span class="tag">Constraints</span><span class="tag">Scalability</span><span class="tag">Explainability</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Platform Gateway + Applied AI</h3>
+          <p>Modernized platform integration via a gateway approach and embedded AI to streamline workflows, improve throughput, and reduce friction.</p>
+          <div class="meta">
+            <span class="tag">Platform</span><span class="tag">Integration</span><span class="tag">Security</span><span class="tag">Applied AI</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="leadership">
+      <h2 class="section-title">Leadership Philosophy</h2>
+      <p class="section-sub">How I build teams and ship durable systems—without trading speed for reliability.</p>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Hire for slope</h3>
+          <p>I hire for learning velocity and ownership. Strong systems emerge from engineers who get better every quarter—individually and as a team.</p>
+        </div>
+        <div class="card">
+          <h3>Ownership culture</h3>
+          <p>Clear accountability, high trust, and strong engineering judgment. Teams own outcomes—not just tickets.</p>
+        </div>
+        <div class="card">
+          <h3>Product–engineering partnership</h3>
+          <p>Customer empathy + platform discipline. I align roadmaps to measurable outcomes and reduce friction across Product, GTM, and CS.</p>
+        </div>
+        <div class="card">
+          <h3>Data-driven execution</h3>
+          <p>Metrics, observability, and operational rigor drive prioritization, quality, and delivery—especially in enterprise environments.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="pov">
+      <h2 class="section-title">AI & Data POV</h2>
+      <p class="section-sub">
+        A practical perspective on integrating AI into enterprise systems—grounded in data foundations, reliability, and measurable value.
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>AI as infrastructure, not a feature</h3>
+          <p>Durable AI integration requires strong data contracts, evaluation, cost controls, and operational guardrails—not just model calls.</p>
+        </div>
+        <div class="card">
+          <h3>Agentic AI in enterprise SaaS</h3>
+          <p>Agents can reshape productivity and customer workflows, but they must be deployed with auditability, policy, and safety constraints.</p>
+        </div>
+        <div class="card">
+          <h3>Analytics as a strategic asset</h3>
+          <p>Governed metrics + embedded analytics create compounding product advantage and faster decisions across the organization.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-sub">Best way to reach me:</p>
+
+      <div class="contact">
+        <a class="btn primary" href="mailto:slsankargm@gmail.com">Email</a>
+        <a class="btn" href="https://www.linkedin.com/in/sankar-narayanan-2645b27/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="Sankar_Narayanan_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+      </div>
+    </section>
 
     <footer>
-        © 2026 Narayanan Sankar. All rights reserved.
+      © <span id="y"></span> Sankar Narayanan · Built on GitHub Pages · <a href="#top">Back to top</a>
     </footer>
+  </main>
 
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
