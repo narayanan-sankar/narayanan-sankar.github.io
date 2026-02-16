@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Case Study — Workforce Planning Optimization</title>
+  <meta name="description" content="Constraint-based optimization engine for workforce planning: modeling, scalability, explainability, and delivery."/>
+  <style>
+    body{margin:0;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial;color:#0b0f17;line-height:1.55}
+    a{color:#1b4dff;text-decoration:none} a:hover{text-decoration:underline}
+    .wrap{max-width:980px;margin:0 auto;padding:44px 20px}
+    .top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:26px}
+    .brand{font-weight:800}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;border:1px solid rgba(11,15,23,.12);color:#0b0f17;text-decoration:none;font-weight:800;font-size:14px}
+    .btn:hover{box-shadow:0 14px 40px rgba(11,15,23,.08)}
+    h1{margin:12px 0 10px;font-size:40px;letter-spacing:-.02em;line-height:1.08}
+    h2{margin:34px 0 10px;font-size:20px;letter-spacing:-.01em}
+    p{margin:0 0 14px;color:rgba(11,15,23,.78);font-size:16px}
+    .kicker{display:inline-flex;gap:10px;align-items:center;padding:8px 12px;border-radius:999px;background:rgba(27,77,255,.08);color:rgba(27,77,255,.95);font-weight:800;font-size:13px}
+    .card{border:1px solid rgba(11,15,23,.10);background:rgba(11,15,23,.03);border-radius:16px;padding:16px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .tagrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .tag{font-size:12px;font-weight:800;color:rgba(11,15,23,.68);border:1px solid rgba(11,15,23,.10);background:rgba(255,255,255,.7);padding:6px 10px;border-radius:999px}
+    ul{margin:10px 0 0;padding-left:18px;color:rgba(11,15,23,.78)}
+    li{margin:8px 0}
+    hr{border:0;border-top:1px solid rgba(11,15,23,.10);margin:22px 0}
+    @media (max-width:820px){ .grid{grid-template-columns:1fr} h1{font-size:32px} }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <div class="brand">Sankar Narayanan</div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;">
+        <a class="btn" href="index.html#case-studies">← Back</a>
+        <a class="btn" href="Sankar_Narayanan_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+      </div>
+    </div>
+
+    <div class="kicker">Case Study</div>
+    <h1>Workforce Planning Optimization</h1>
+    <p>
+      Designed a constraint-based planning engine to generate workforce schedules under real-world constraints—demand patterns,
+      individual availability, and labor regulations—while remaining scalable and explainable.
+    </p>
+
+    <div class="tagrow">
+      <span class="tag">Optimization</span><span class="tag">Constraint modeling</span><span class="tag">Scalability</span>
+      <span class="tag">Explainability</span><span class="tag">Workflow integration</span><span class="tag">Enterprise readiness</span>
+    </div>
+
+    <hr>
+
+    <h2>Context</h2>
+    <p>
+      Large employers need weekly planning at scale—balancing coverage demand, fairness, employee preferences,
+      and regulatory rules. The system must generate schedules quickly and explain why it chose a solution.
+    </p>
+
+    <h2>Problem</h2>
+    <div class="grid">
+      <div class="card">
+        <p><strong>Complex constraints</strong></p>
+        <p>Availability, shift rules, labor laws, skills, break requirements, and fairness objectives.</p>
+      </div>
+      <div class="card">
+        <p><strong>Scale</strong></p>
+        <p>Many locations and employees; fast iteration for managers; predictable runtime.</p>
+      </div>
+      <div class="card">
+        <p><strong>Explainability</strong></p>
+        <p>Managers need to understand tradeoffs and adjust constraints without “black box” behavior.</p>
+      </div>
+      <div class="card">
+        <p><strong>Integration</strong></p>
+        <p>Must fit into enterprise workflows with auditability and strong data contracts.</p>
+      </div>
+    </div>
+
+    <h2>Approach</h2>
+    <ul>
+      <li><strong>Modeling:</strong> defined constraints and objectives with clear priority tiers (hard vs soft constraints).</li>
+      <li><strong>Solver strategy:</strong> designed for predictable runtime and incremental re-optimization for what-if changes.</li>
+      <li><strong>Explainability:</strong> generated reason codes (constraint violations avoided, objective tradeoffs) for manager trust.</li>
+      <li><strong>System design:</strong> clean APIs for inputs/outputs, validation, and versioned constraint definitions.</li>
+      <li><strong>Enterprise readiness:</strong> audit trails, observability, and deterministic behavior across runs where required.</li>
+    </ul>
+
+    <h2>Impact</h2>
+    <ul>
+      <li>Enabled scalable weekly scheduling for large employers with complex constraints.</li>
+      <li>Improved manager confidence through explainable outputs and guided what-if adjustments.</li>
+      <li>Reduced operational friction by integrating the engine into existing workforce planning workflows.</li>
+    </ul>
+
+    <hr>
+    <p style="color:rgba(11,15,23,.55);font-size:13px;">
+      Note: Details intentionally generalized for confidentiality.
+    </p>
+  </div>
+</body>
+</html>
