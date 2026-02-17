@@ -16,8 +16,7 @@
       --border2: rgba(11,15,23,.08);
       --card: rgba(11,15,23,.03);
       --accent: #1b4dff;
-      --shadow: 0 14px 40px rgba(11,15,23,.08);
-      --shadow2: 0 20px 60px rgba(11,15,23,.10);
+      --shadow: 0 18px 55px rgba(11,15,23,.10);
       --radius: 18px;
       --max: 1040px;
     }
@@ -62,6 +61,7 @@
       align-items:center;
       gap:10px;
       color: var(--text);
+      min-width: 220px;
     }
 
     .brand .dot{
@@ -78,9 +78,10 @@
     }
 
     .brand .name{
-      font-weight: 650;
-      letter-spacing: .25px;
+      font-weight: 750;
+      letter-spacing: .4px;
       font-size: 15px;
+      color: rgba(11,15,23,.98);
     }
 
     .brand .role{
@@ -100,7 +101,7 @@
       color: var(--text);
       font-weight: 500;
       font-size: 14px;
-      opacity: .78;
+      opacity: .68;
     }
     .navlinks a:hover{ opacity: 1; text-decoration: none; }
 
@@ -136,17 +137,14 @@
       color: inherit;
       display: block;
     }
-
     .card-link .card{
       position: relative;
       transition: transform .18s ease, box-shadow .22s ease, background .22s ease;
     }
-
     .card-link:hover .card {
       box-shadow: 0 20px 50px rgba(11,15,23,.12);
       transform: translateY(-3px);
     }
-
     .card-link .card::after{
       content: "↗";
       position: absolute;
@@ -158,14 +156,13 @@
       place-items: center;
       border-radius: 999px;
       border: 1px solid var(--border);
-      background: rgba(255,255,255,.75);
+      background: rgba(255,255,255,.78);
       color: rgba(11,15,23,.75);
       font-weight: 900;
       opacity: 0;
       transform: translateY(3px);
       transition: opacity .18s ease, transform .18s ease, box-shadow .18s ease;
     }
-
     .card-link:hover .card::after,
     .card-link:focus-visible .card::after{
       opacity: 1;
@@ -173,164 +170,182 @@
       box-shadow: 0 14px 30px rgba(11,15,23,.10);
     }
 
-    /* HERO (Option B redesign) */
+    /* HERO (Option 1 + 3) */
     .hero-shell{
-      padding: 40px 0 10px;
+      padding: 38px 0 10px;
       position: relative;
       overflow: hidden;
     }
 
+    /* subtle, structured wash - not a halo */
     .hero-shell::before{
       content:"";
       position:absolute;
-      inset: -200px -200px auto -200px;
-      height: 520px;
+      inset: 0;
+      height: 420px;
       background:
-        radial-gradient(closest-side, rgba(27,77,255,.10), rgba(27,77,255,0) 60%),
-        radial-gradient(closest-side, rgba(11,15,23,.06), rgba(11,15,23,0) 55%);
+        radial-gradient(1200px 420px at 20% 5%, rgba(27,77,255,.10), rgba(27,77,255,0) 55%),
+        radial-gradient(900px 360px at 85% 0%, rgba(11,15,23,.07), rgba(11,15,23,0) 60%);
       pointer-events:none;
       z-index: 0;
-      transform: translateY(-60px);
+      transform: translateY(-70px);
     }
 
     .hero{
       position: relative;
       z-index: 1;
-      padding: 70px 0 34px;
+      padding: 62px 0 28px;
+    }
+
+    .hero-stage{
+      border: 1px solid var(--border2);
+      border-radius: 22px;
+      background: rgba(255,255,255,.78);
+      box-shadow: var(--shadow);
+      overflow: hidden;
     }
 
     .hero-grid{
       display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 22px;
-      align-items: start;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 0;
+      align-items: stretch; /* equal height columns */
+    }
+
+    .hero-left, .hero-right{
+      padding: 30px 28px 22px;
+      height: 100%;
+    }
+
+    /* a subtle vertical separator, executive-style */
+    .hero-right{
+      border-left: 1px solid rgba(11,15,23,.08);
+      background: linear-gradient(180deg, rgba(11,15,23,.02), rgba(11,15,23,0) 55%);
     }
 
     .kicker{
       display:inline-flex;
       gap:10px;
       align-items:center;
-      padding: 8px 12px;
+      padding: 7px 11px;
       border-radius: 999px;
-      background: rgba(27,77,255,.06);
-      color: rgba(27,77,255,.92);
-      font-weight: 650;
-      font-size: 12.5px;
-      letter-spacing: .2px;
-      border: 1px solid rgba(27,77,255,.14);
+      background: rgba(27,77,255,.05);
+      color: rgba(27,77,255,.88);
+      font-weight: 600;
+      font-size: 12.25px;
+      letter-spacing: .18px;
+      border: 1px solid rgba(27,77,255,.12);
     }
 
-    h1{
-      margin: 18px 0 16px;
-      font-size: clamp(30px, 4.2vw, 50px);
-      line-height: 1.12;
-      letter-spacing: -0.015em;
-      font-weight: 700;
+    /* Architectural hero */
+    .hero-arch{ position: relative; padding-left: 16px; }
+    .hero-rule{
+      position: absolute;
+      left: 0;
+      top: 2px;
+      bottom: 6px;
+      width: 2px;
+      border-radius: 999px;
+      background: rgba(27,77,255,.20);
+    }
+    .eyebrow{
+      font-size: 12px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: rgba(11,15,23,.55);
+      margin-bottom: 10px;
+    }
+    h1.hero-title{
+      margin: 0 0 14px;
+      font-size: clamp(27px, 3.6vw, 44px);
+      line-height: 1.18;
+      letter-spacing: -0.010em;
+      font-weight: 650;
+    }
+    .hero-soft{
+      font-weight: 600;
+      color: rgba(11,15,23,.82);
     }
 
     .hero-accent{
-      font-weight: 780;
-      text-decoration: none;
-      border-bottom: 6px solid rgba(27,77,255,.12);
-      padding-bottom: 2px;
+      font-weight: 800;
+      color: rgba(11,15,23,.96);
+      background: linear-gradient(180deg, rgba(27,77,255,.0), rgba(27,77,255,.0));
+      padding: 0 2px;
+      border-bottom: 5px solid rgba(27,77,255,.12); /* softer than a marker underline */
     }
 
     .lead{
-      margin: 0 0 18px;
-      font-size: 17.5px;
+      margin: 0 0 16px;
+      font-size: 16.5px;
       color: var(--muted);
-      max-width: 75ch;
+      max-width: 74ch;
     }
 
-    .chips{
+    /* Right column: proof ledger (no tiles) */
+    .glance-head{
       display:flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 14px 0 18px;
-    }
-    .chip{
-      font-size: 13px;
-      font-weight: 700;
-      color: rgba(11,15,23,.76);
-      border: 1px solid var(--border2);
-      background: rgba(255,255,255,.75);
-      border-radius: 999px;
-      padding: 8px 12px;
-    }
-
-    .cta{
-      display:flex;
-      gap: 12px;
-      flex-wrap: wrap;
       align-items:center;
-      margin: 18px 0 0;
-    }
-
-    /* Executive panel (right side) */
-    .exec-panel{
-      border: 1px solid var(--border2);
-      border-radius: calc(var(--radius) + 2px);
-      background: rgba(255,255,255,.78);
-      box-shadow: var(--shadow2);
-      padding: 18px;
-    }
-
-    .exec-panel .panel-title{
-      display:flex;
-      align-items: center;
-      justify-content: space-between;
+      justify-content:space-between;
       gap: 12px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
-
-    .exec-panel .panel-title .t{
-      font-size: 13px;
+    .glance-title{
+      font-size: 12.5px;
       letter-spacing: .22px;
-      color: rgba(11,15,23,.72);
-      font-weight: 800;
+      color: rgba(11,15,23,.70);
+      font-weight: 850;
       text-transform: uppercase;
     }
-
-    .exec-panel .panel-title .pill{
+    .glance-pill{
       font-size: 12px;
       font-weight: 800;
       color: rgba(11,15,23,.70);
-      border: 1px solid var(--border2);
+      border: 1px solid rgba(11,15,23,.10);
       background: rgba(11,15,23,.02);
       padding: 6px 10px;
       border-radius: 999px;
       white-space: nowrap;
     }
 
-    .metrics{
-      display:grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap: 12px;
-      margin-top: 12px;
+    .ledger{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border: 1px solid rgba(11,15,23,.08);
+      border-radius: 16px;
+      background: rgba(255,255,255,.72);
+      overflow: hidden;
     }
 
-    .metric{
-      border: 1px solid var(--border2);
-      border-radius: var(--radius);
-      padding: 14px;
-      background: rgba(11,15,23,.02);
+    .ledger li{
+      display:flex;
+      justify-content:space-between;
+      gap: 16px;
+      padding: 12px 14px;
+      border-top: 1px solid rgba(11,15,23,.08);
+      align-items: baseline;
     }
-    .metric .num{
-      font-size: 17px;
-      font-weight: 700;
+    .ledger li:first-child{ border-top: 0; }
+
+    .ledger .num{
+      font-weight: 820;
       letter-spacing: -0.01em;
+      min-width: 92px;
     }
-    .metric .lbl{
-      margin-top: 4px;
-      font-size: 12.5px;
+    .ledger .lbl{
       color: var(--muted2);
       font-weight: 700;
+      font-size: 13px;
+      text-align: right;
+      flex: 1;
     }
 
-    .divider{
-      border: 0;
+    .mini-divider{
+      border:0;
       border-top: 1px solid rgba(11,15,23,.10);
-      margin: 16px 0 14px;
+      margin: 16px 0 12px;
     }
 
     .highlights{
@@ -340,17 +355,46 @@
       font-size: 14.5px;
     }
     .highlights li{ margin: 10px 0; }
-
     .highlights strong{
       color: rgba(11,15,23,.86);
-      font-weight: 800;
+      font-weight: 820;
     }
 
-    .note{
-      margin-top: 12px;
-      font-size: 12.5px;
-      color: rgba(11,15,23,.55);
-      font-style: italic;
+    /* Shared footer row (spans both columns) */
+    .hero-footer{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap: 18px;
+      padding: 18px 26px 22px;
+      border-top: 1px solid rgba(11,15,23,.08);
+      background: rgba(255,255,255,.70);
+      flex-wrap: wrap;
+    }
+
+    .chips{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0;
+      max-width: 720px;
+    }
+    .chip{
+      font-size: 13px;
+      font-weight: 700;
+      color: rgba(11,15,23,.76);
+      border: 1px solid var(--border2);
+      background: rgba(255,255,255,.78);
+      border-radius: 999px;
+      padding: 8px 12px;
+    }
+
+    .cta{
+      display:flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items:center;
+      margin: 0;
     }
 
     /* Sections */
@@ -387,7 +431,7 @@
       transition: box-shadow .2s ease, background .2s ease;
     }
     .card:hover{
-      box-shadow: var(--shadow);
+      box-shadow: 0 14px 40px rgba(11,15,23,.08);
       background: rgba(255,255,255,.9);
     }
     .card h3{
@@ -430,14 +474,22 @@
     }
 
     @media (max-width: 980px){
-      .hero{ padding-top: 54px; }
+      .hero{ padding-top: 44px; }
       .hero-grid{ grid-template-columns: 1fr; }
+      .hero-right{ border-left: 0; border-top: 1px solid rgba(11,15,23,.08); }
+      .hero-footer{ align-items:flex-start; }
     }
 
     @media (max-width: 920px){
       .grid-3{ grid-template-columns: 1fr; }
       .grid-2{ grid-template-columns: 1fr; }
     }
+  
+    .brand .name:hover{
+      text-decoration: none;
+      box-shadow: inset 0 -0.35em 0 rgba(27,77,255,.08);
+    }
+
   </style>
 </head>
 
@@ -467,24 +519,52 @@
   <main class="wrap">
     <div class="hero-shell" id="top">
       <header class="hero">
-        <div class="hero-grid">
-          <!-- LEFT: executive narrative -->
-          <div>
-            <div class="kicker">AI • Analytics • Platform • Scale</div>
+        <div class="hero-stage" aria-label="Hero stage">
+          <div class="hero-grid">
+            <!-- LEFT -->
+            <div class="hero-left">
+<div class="hero-arch">
+              <div class="hero-rule" aria-hidden="true"></div>
+              <div class="eyebrow">ENGINEERING LEADER</div>
+              <h1 class="hero-title">
+                Designing <span class="hero-accent">AI &amp; analytics platforms</span><br/>
+                for <span class="hero-soft">enterprise-scale systems</span>.
+              </h1>
+            </div>
 
-            <h1>
-              Engineering leader building
-              <br />
-              <span class="hero-accent">AI & analytics platforms</span>
-              at scale.
-            </h1>
+              <p class="lead">
+                I build and scale engineering organizations that modernize enterprise architecture, ship durable data platforms,
+                and <strong>embed AI into real customer workflows</strong>—balancing system integrity with product execution
+                and operational rigor.
+              </p>
+            </div>
 
-            <p class="lead">
-              I build and scale engineering organizations that modernize enterprise architecture,
-              ship durable data platforms, and <strong>embed AI into real customer workflows</strong>—combining
-              platform discipline with product execution and operational rigor.
-            </p>
+            <!-- RIGHT -->
+            <aside class="hero-right" aria-label="Executive proof ledger">
+              <div class="glance-head">
+                <div class="glance-title">At a glance</div>
+                <div class="glance-pill">Enterprise scale operator</div>
+              </div>
 
+              <ul class="ledger" aria-label="Key metrics">
+                <li><span class="num">20+ years</span><span class="lbl">Engineering leadership</span></li>
+                <li><span class="num">3 → 120+</span><span class="lbl">Org scale experience</span></li>
+                <li><span class="num">6,000+</span><span class="lbl">Enterprise customers served</span></li>
+                <li><span class="num">Billions</span><span class="lbl">Queries & events processed</span></li>
+              </ul>
+
+              <hr class="mini-divider" />
+
+              <ul class="highlights" aria-label="Signature highlights">
+                <li><strong>Workday Analytics:</strong> multi-tenant analytics platform with governed metrics and enterprise reliability.</li>
+                <li><strong>Workforce Planning:</strong> constraint-based optimization for complex scheduling and labor compliance.</li>
+                <li><strong>Thalamus:</strong> platform modernization + integration gateway; AI-driven workflow assistance.</li>
+              </ul>
+            </aside>
+          </div>
+
+          <!-- Shared footer row -->
+          <div class="hero-footer" aria-label="Hero actions and focus areas">
             <div class="chips">
               <span class="chip">Enterprise SaaS</span>
               <span class="chip">Data Platforms</span>
@@ -500,31 +580,6 @@
               <a class="btn" href="https://www.linkedin.com/in/sankar-narayanan-2645b27/" target="_blank" rel="noopener">LinkedIn</a>
             </div>
           </div>
-
-          <!-- RIGHT: executive panel -->
-          <aside class="exec-panel" aria-label="Executive summary panel">
-            <div class="panel-title">
-              <div class="t">At a glance</div>
-              <div class="pill">Enterprise scale operator</div>
-            </div>
-
-            <div class="metrics" aria-label="Key metrics">
-              <div class="metric"><div class="num">20+ years</div><div class="lbl">Engineering leadership</div></div>
-              <div class="metric"><div class="num">3 → 120+</div><div class="lbl">Org scale experience</div></div>
-              <div class="metric"><div class="num">6,000+</div><div class="lbl">Enterprise customers served</div></div>
-              <div class="metric"><div class="num">Billions</div><div class="lbl">Queries & events processed</div></div>
-            </div>
-
-            <hr class="divider" />
-
-            <ul class="highlights">
-              <li><strong>Workday Analytics:</strong> multi-tenant analytics platform with governed metrics and enterprise reliability.</li>
-              <li><strong>Workforce Planning:</strong> constraint-based optimization for complex scheduling and labor compliance.</li>
-              <li><strong>Thalamus:</strong> platform modernization + integration gateway; AI-driven workflow assistance.</li>
-            </ul>
-
-            <div class="note">Details available in case studies and resume.</div>
-          </aside>
         </div>
       </header>
     </div>
