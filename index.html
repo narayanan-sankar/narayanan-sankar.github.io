@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
- <title>Sankar Narayanan | Engineering Leader</title>
+  <title>Sankar Narayanan | Engineering Leader</title>
   <meta name="description" content="Engineering leader building AI, analytics, and platform systems at scale. Case studies from Workday, workforce planning optimization, and Thalamus platform modernization." />
-
 
   <style>
     :root{
@@ -14,9 +13,11 @@
       --muted: rgba(11,15,23,.72);
       --muted2: rgba(11,15,23,.52);
       --border: rgba(11,15,23,.10);
+      --border2: rgba(11,15,23,.08);
       --card: rgba(11,15,23,.03);
-      --accent: #1b4dff; /* subtle, modern blue */
+      --accent: #1b4dff;
       --shadow: 0 14px 40px rgba(11,15,23,.08);
+      --shadow2: 0 20px 60px rgba(11,15,23,.10);
       --radius: 18px;
       --max: 1040px;
     }
@@ -37,6 +38,8 @@
     a:hover{ text-decoration: underline; }
 
     .wrap{ max-width: var(--max); margin: 0 auto; padding: 0 22px; }
+
+    /* TOP BAR */
     .topbar{
       position: sticky;
       top: 0;
@@ -45,56 +48,6 @@
       border-bottom: 1px solid var(--border);
       z-index: 10;
     }
-
-    .card-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-
-.card-link:hover .card {
-  box-shadow: 0 20px 50px rgba(11,15,23,.12);
-  transform: translateY(-3px);
-  transition: all .2s ease;
-}
-
-
-    /* Make the whole card feel clickable + add a subtle arrow */
-.card-link .card{
-  position: relative;
-  transition: transform .18s ease, box-shadow .22s ease, background .22s ease;
-}
-
-.card-link .card::after{
-  content: "↗";
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 34px;
-  height: 34px;
-  display: grid;
-  place-items: center;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,.75);
-  color: rgba(11,15,23,.75);
-  font-weight: 900;
-  opacity: 0;
-  transform: translateY(3px);
-  transition: opacity .18s ease, transform .18s ease, box-shadow .18s ease;
-}
-
-.card-link:hover .card::after{
-  opacity: 1;
-  transform: translateY(0);
-  box-shadow: 0 14px 30px rgba(11,15,23,.10);
-}
-
-.card-link:focus-visible .card::after{
-  opacity: 1;
-  transform: translateY(0);
-}
-
 
     .nav{
       display:flex;
@@ -105,15 +58,37 @@
     }
 
     .brand{
-      display:flex; align-items:center; gap:10px;
-      font-weight: 700;
-      letter-spacing: .2px;
+      display:flex;
+      align-items:center;
+      gap:10px;
       color: var(--text);
     }
-    .dot{
+
+    .brand .dot{
       width:10px; height:10px; border-radius:999px;
       background: var(--accent);
-      box-shadow: 0 0 0 4px rgba(27,77,255,.12);
+      box-shadow: 0 0 0 4px rgba(27,77,255,.10);
+      flex: 0 0 auto;
+    }
+
+    .brand .nameblock{
+      display:flex;
+      flex-direction:column;
+      line-height: 1.1;
+    }
+
+    .brand .name{
+      font-weight: 650;
+      letter-spacing: .25px;
+      font-size: 15px;
+    }
+
+    .brand .role{
+      margin-top: 2px;
+      font-size: 12.5px;
+      color: var(--muted2);
+      font-weight: 600;
+      letter-spacing: .15px;
     }
 
     .navlinks{
@@ -123,9 +98,9 @@
     }
     .navlinks a{
       color: var(--text);
-      font-weight: 600;
+      font-weight: 500;
       font-size: 14px;
-      opacity: .86;
+      opacity: .78;
     }
     .navlinks a:hover{ opacity: 1; text-decoration: none; }
 
@@ -138,11 +113,16 @@
       border: 1px solid var(--border);
       color: var(--text);
       background: transparent;
-      transition: transform .08s ease, box-shadow .2s ease, background .2s ease;
+      transition: transform .08s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
       text-decoration: none;
       white-space: nowrap;
     }
-    .btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 24px rgba(11,15,23,.08); text-decoration:none; }
+    .btn:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(11,15,23,.08);
+      text-decoration:none;
+      border-color: rgba(11,15,23,.14);
+    }
     .btn.primary{
       background: var(--accent);
       color: white;
@@ -150,32 +130,118 @@
     }
     .btn.primary:hover{ box-shadow: 0 16px 30px rgba(27,77,255,.22); }
 
-    /* HERO */
-    .hero{
-      padding: 72px 0 40px;
+    /* Cards + Clickable Case Study Links */
+    .card-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
     }
+
+    .card-link .card{
+      position: relative;
+      transition: transform .18s ease, box-shadow .22s ease, background .22s ease;
+    }
+
+    .card-link:hover .card {
+      box-shadow: 0 20px 50px rgba(11,15,23,.12);
+      transform: translateY(-3px);
+    }
+
+    .card-link .card::after{
+      content: "↗";
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.75);
+      color: rgba(11,15,23,.75);
+      font-weight: 900;
+      opacity: 0;
+      transform: translateY(3px);
+      transition: opacity .18s ease, transform .18s ease, box-shadow .18s ease;
+    }
+
+    .card-link:hover .card::after,
+    .card-link:focus-visible .card::after{
+      opacity: 1;
+      transform: translateY(0);
+      box-shadow: 0 14px 30px rgba(11,15,23,.10);
+    }
+
+    /* HERO (Option B redesign) */
+    .hero-shell{
+      padding: 40px 0 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-shell::before{
+      content:"";
+      position:absolute;
+      inset: -200px -200px auto -200px;
+      height: 520px;
+      background:
+        radial-gradient(closest-side, rgba(27,77,255,.10), rgba(27,77,255,0) 60%),
+        radial-gradient(closest-side, rgba(11,15,23,.06), rgba(11,15,23,0) 55%);
+      pointer-events:none;
+      z-index: 0;
+      transform: translateY(-60px);
+    }
+
+    .hero{
+      position: relative;
+      z-index: 1;
+      padding: 70px 0 34px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 22px;
+      align-items: start;
+    }
+
     .kicker{
-      display:inline-flex; gap:10px; align-items:center;
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
       padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(27,77,255,.08);
-      color: rgba(27,77,255,.95);
-      font-weight: 700;
-      font-size: 13px;
+      background: rgba(27,77,255,.06);
+      color: rgba(27,77,255,.92);
+      font-weight: 650;
+      font-size: 12.5px;
       letter-spacing: .2px;
+      border: 1px solid rgba(27,77,255,.14);
     }
+
     h1{
-      margin: 16px 0 14px;
-      font-size: clamp(34px, 4.8vw, 58px);
-      line-height: 1.05;
-      letter-spacing: -0.02em;
+      margin: 18px 0 16px;
+      font-size: clamp(30px, 4.2vw, 50px);
+      line-height: 1.12;
+      letter-spacing: -0.015em;
+      font-weight: 700;
     }
+
+    .hero-accent{
+      font-weight: 780;
+      text-decoration: none;
+      border-bottom: 6px solid rgba(27,77,255,.12);
+      padding-bottom: 2px;
+    }
+
     .lead{
-      margin: 0 0 22px;
-      font-size: 18px;
+      margin: 0 0 18px;
+      font-size: 17.5px;
       color: var(--muted);
-      max-width: 78ch;
+      max-width: 75ch;
     }
+
     .chips{
       display:flex;
       flex-wrap: wrap;
@@ -185,18 +251,109 @@
     .chip{
       font-size: 13px;
       font-weight: 700;
-      color: rgba(11,15,23,.78);
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.7);
+      color: rgba(11,15,23,.76);
+      border: 1px solid var(--border2);
+      background: rgba(255,255,255,.75);
       border-radius: 999px;
       padding: 8px 12px;
     }
+
     .cta{
-      display:flex; gap: 12px; flex-wrap: wrap; align-items:center;
-      margin: 18px 0 6px;
+      display:flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items:center;
+      margin: 18px 0 0;
     }
 
-    /* SECTIONS */
+    /* Executive panel (right side) */
+    .exec-panel{
+      border: 1px solid var(--border2);
+      border-radius: calc(var(--radius) + 2px);
+      background: rgba(255,255,255,.78);
+      box-shadow: var(--shadow2);
+      padding: 18px;
+    }
+
+    .exec-panel .panel-title{
+      display:flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .exec-panel .panel-title .t{
+      font-size: 13px;
+      letter-spacing: .22px;
+      color: rgba(11,15,23,.72);
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .exec-panel .panel-title .pill{
+      font-size: 12px;
+      font-weight: 800;
+      color: rgba(11,15,23,.70);
+      border: 1px solid var(--border2);
+      background: rgba(11,15,23,.02);
+      padding: 6px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .metrics{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .metric{
+      border: 1px solid var(--border2);
+      border-radius: var(--radius);
+      padding: 14px;
+      background: rgba(11,15,23,.02);
+    }
+    .metric .num{
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .metric .lbl{
+      margin-top: 4px;
+      font-size: 12.5px;
+      color: var(--muted2);
+      font-weight: 700;
+    }
+
+    .divider{
+      border: 0;
+      border-top: 1px solid rgba(11,15,23,.10);
+      margin: 16px 0 14px;
+    }
+
+    .highlights{
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 14.5px;
+    }
+    .highlights li{ margin: 10px 0; }
+
+    .highlights strong{
+      color: rgba(11,15,23,.86);
+      font-weight: 800;
+    }
+
+    .note{
+      margin-top: 12px;
+      font-size: 12.5px;
+      color: rgba(11,15,23,.55);
+      font-style: italic;
+    }
+
+    /* Sections */
     section{ padding: 44px 0; }
     .section-title{
       margin: 0 0 10px;
@@ -220,17 +377,18 @@
       grid-template-columns: repeat(2, minmax(0,1fr));
       gap: 14px;
     }
+
     .card{
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 18px;
       box-shadow: none;
+      transition: box-shadow .2s ease, background .2s ease;
     }
     .card:hover{
       box-shadow: var(--shadow);
       background: rgba(255,255,255,.9);
-      transition: box-shadow .2s ease, background .2s ease;
     }
     .card h3{
       margin: 0 0 8px;
@@ -242,6 +400,7 @@
       color: var(--muted);
       font-size: 14.5px;
     }
+
     .meta{
       display:flex; flex-wrap:wrap; gap: 8px;
       margin-top: 10px;
@@ -255,39 +414,6 @@
       padding: 6px 10px;
       border-radius: 999px;
     }
-
-    .metrics{
-      display:grid;
-      grid-template-columns: repeat(4, minmax(0,1fr));
-      gap: 12px;
-      margin-top: 14px;
-    }
-    .metric{
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 16px;
-      background: rgba(255,255,255,.65);
-    }
-    .metric .num{
-      font-size: 18px;
-      font-weight: 800;
-      letter-spacing: -0.01em;
-    }
-    .metric .lbl{
-      margin-top: 4px;
-      font-size: 12.5px;
-      color: var(--muted2);
-      font-weight: 700;
-    }
-
-    .bullets{
-      margin: 14px 0 0;
-      padding-left: 18px;
-      color: var(--muted);
-      font-size: 15px;
-      max-width: 92ch;
-    }
-    .bullets li{ margin: 8px 0; }
 
     .contact{
       display:flex;
@@ -303,11 +429,14 @@
       font-size: 13px;
     }
 
+    @media (max-width: 980px){
+      .hero{ padding-top: 54px; }
+      .hero-grid{ grid-template-columns: 1fr; }
+    }
+
     @media (max-width: 920px){
       .grid-3{ grid-template-columns: 1fr; }
       .grid-2{ grid-template-columns: 1fr; }
-      .metrics{ grid-template-columns: 1fr 1fr; }
-      .hero{ padding-top: 54px; }
     }
   </style>
 </head>
@@ -318,7 +447,10 @@
       <div class="nav">
         <div class="brand">
           <span class="dot"></span>
-          <span>Sankar Narayanan</span>
+          <span class="nameblock">
+            <span class="name">Sankar Narayanan</span>
+            <span class="role">Engineering & AI Platforms</span>
+          </span>
         </div>
 
         <div class="navlinks">
@@ -333,370 +465,385 @@
   </div>
 
   <main class="wrap">
-    <header class="hero" id="top">
-      <div class="kicker">AI • Analytics • Platform • Scale</div>
+    <div class="hero-shell" id="top">
+      <header class="hero">
+        <div class="hero-grid">
+          <!-- LEFT: executive narrative -->
+          <div>
+            <div class="kicker">AI • Analytics • Platform • Scale</div>
 
-      <h1>Engineering leader building AI, analytics, and platform systems at scale.</h1>
+            <h1>
+              Engineering leader building
+              <br />
+              <span class="hero-accent">AI & analytics platforms</span>
+              at scale.
+            </h1>
 
-      <p class="lead">
-        I build and scale engineering organizations that modernize enterprise architecture, ship durable data platforms,
-        and integrate AI into real customer workflows—combining platform discipline with product delivery and operational rigor.
-      </p>
+            <p class="lead">
+              I build and scale engineering organizations that modernize enterprise architecture,
+              ship durable data platforms, and <strong>embed AI into real customer workflows</strong>—combining
+              platform discipline with product execution and operational rigor.
+            </p>
 
-      <div class="chips">
-        <span class="chip">Enterprise SaaS</span>
-        <span class="chip">Data Platforms</span>
-        <span class="chip">Observability & Reliability</span>
-        <span class="chip">Security & Governance</span>
-        <span class="chip">Applied AI</span>
-        <span class="chip">Org Building</span>
-      </div>
+            <div class="chips">
+              <span class="chip">Enterprise SaaS</span>
+              <span class="chip">Data Platforms</span>
+              <span class="chip">Observability & Reliability</span>
+              <span class="chip">Security & Governance</span>
+              <span class="chip">Applied AI</span>
+              <span class="chip">Org Building</span>
+            </div>
 
-      <div class="cta">
-        <a class="btn primary" href="#case-studies">View Case Studies</a>
-        <a class="btn" href="Sankar_Narayanan.pdf" target="_blank" rel="noopener">Download Resume</a>
-        <a class="btn" href="https://www.linkedin.com/in/sankar-narayanan-2645b27/" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
+            <div class="cta">
+              <a class="btn primary" href="#case-studies">View Case Studies</a>
+              <a class="btn" href="Sankar_Narayanan.pdf" target="_blank" rel="noopener">Download Resume</a>
+              <a class="btn" href="https://www.linkedin.com/in/sankar-narayanan-2645b27/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </div>
 
-      <div class="metrics" aria-label="Key metrics">
-        <div class="metric"><div class="num">20+ years</div><div class="lbl">Engineering leadership</div></div>
-        <div class="metric"><div class="num">3 → 120+</div><div class="lbl">Org scale experience</div></div>
-        <div class="metric"><div class="num">6,000+</div><div class="lbl">Enterprise customers served</div></div>
-        <div class="metric"><div class="num">Billions</div><div class="lbl">Queries & events processed</div></div>
-      </div>
+          <!-- RIGHT: executive panel -->
+          <aside class="exec-panel" aria-label="Executive summary panel">
+            <div class="panel-title">
+              <div class="t">At a glance</div>
+              <div class="pill">Enterprise scale operator</div>
+            </div>
 
-      <ul class="bullets">
-        <li><strong>Workday Analytics:</strong> built and scaled a multi-tenant analytics platform serving thousands of customers with enterprise reliability.</li>
-        <li><strong>Workforce Planning:</strong> designed constraint-based optimization for complex scheduling and labor compliance scenarios.</li>
-        <li><strong>Thalamus:</strong> led platform modernization and integration gateway capabilities; introduced AI-driven workflow assistance.</li>
-      </ul>
-    </header>
+            <div class="metrics" aria-label="Key metrics">
+              <div class="metric"><div class="num">20+ years</div><div class="lbl">Engineering leadership</div></div>
+              <div class="metric"><div class="num">3 → 120+</div><div class="lbl">Org scale experience</div></div>
+              <div class="metric"><div class="num">6,000+</div><div class="lbl">Enterprise customers served</div></div>
+              <div class="metric"><div class="num">Billions</div><div class="lbl">Queries & events processed</div></div>
+            </div>
 
-<section id="leadership-impact" style="padding: 34px 0 0;">
-  <h2 class="section-title">Leadership Impact</h2>
-  <p class="section-sub">
-    I build strong teams, scale engineering systems, and deliver outcomes with operational discipline—especially in enterprise environments.
-  </p>
+            <hr class="divider" />
 
-  <div class="grid-2">
-    <div class="card">
-      <h3>Scaled organizations across multiple stages</h3>
-      <p>
-        I’ve repeatedly grown teams from early-stage builds to multi-team orgs—scaling execution capacity while improving engineering quality and leadership depth.
-      </p>
-      <div class="meta">
-        <span class="tag">Org design</span><span class="tag">Hiring</span><span class="tag">Leadership bench</span>
-      </div>
+            <ul class="highlights">
+              <li><strong>Workday Analytics:</strong> multi-tenant analytics platform with governed metrics and enterprise reliability.</li>
+              <li><strong>Workforce Planning:</strong> constraint-based optimization for complex scheduling and labor compliance.</li>
+              <li><strong>Thalamus:</strong> platform modernization + integration gateway; AI-driven workflow assistance.</li>
+            </ul>
+
+            <div class="note">Details available in case studies and resume.</div>
+          </aside>
+        </div>
+      </header>
     </div>
 
-    <div class="card">
-      <h3>Built high-retention, high-ownership teams</h3>
-      <p>
-        At Thalamus, we operated with strong ownership and delivery discipline—achieving <strong>0% attrition</strong> during my tenure while modernizing the platform and shipping customer-facing capabilities.
+    <section id="leadership" style="padding: 34px 0 0;">
+      <h2 class="section-title">Leadership Impact</h2>
+      <p class="section-sub">
+        I build strong teams, scale engineering systems, and deliver outcomes with operational discipline—especially in enterprise environments.
       </p>
-      <div class="meta">
-        <span class="tag">Culture</span><span class="tag">Execution</span><span class="tag">Retention</span>
-      </div>
-    </div>
 
-    <div class="card">
-      <h3>Enterprise-grade delivery & operational rigor</h3>
-      <p>
-        I emphasize reliability, observability, security, and cost discipline—building systems and teams that can support enterprise SLAs and rapid growth.
+      <div class="grid-2">
+        <div class="card">
+          <h3>Scaled organizations across multiple stages</h3>
+          <p>
+            I’ve repeatedly grown teams from early-stage builds to multi-team orgs—scaling execution capacity while improving engineering quality and leadership depth.
+          </p>
+          <div class="meta">
+            <span class="tag">Org design</span><span class="tag">Hiring</span><span class="tag">Leadership bench</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Built high-retention, high-ownership teams</h3>
+          <p>
+            At Thalamus, we operated with strong ownership and delivery discipline—achieving <strong>0% attrition</strong> during my tenure while modernizing the platform and shipping customer-facing capabilities.
+          </p>
+          <div class="meta">
+            <span class="tag">Culture</span><span class="tag">Execution</span><span class="tag">Retention</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Enterprise-grade delivery & operational rigor</h3>
+          <p>
+            I emphasize reliability, observability, security, and cost discipline—building systems and teams that can support enterprise SLAs and rapid growth.
+          </p>
+          <div class="meta">
+            <span class="tag">Reliability</span><span class="tag">Observability</span><span class="tag">Security</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Platform + product partnership</h3>
+          <p>
+            I partner tightly with Product, GTM, and Customer Success to prioritize the highest-leverage work and reduce friction—especially when scaling adoption.
+          </p>
+          <div class="meta">
+            <span class="tag">Customer empathy</span><span class="tag">Roadmaps</span><span class="tag">Cross-functional</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2 class="section-title">Experience Snapshot</h2>
+      <p class="section-sub">
+        A few chapters where I scaled teams, modernized platforms, and delivered enterprise outcomes—built for reliability, speed, and customer trust.
       </p>
-      <div class="meta">
-        <span class="tag">Reliability</span><span class="tag">Observability</span><span class="tag">Security</span>
-      </div>
-    </div>
 
-    <div class="card">
-      <h3>Platform + product partnership</h3>
-      <p>
-        I partner tightly with Product, GTM, and Customer Success to prioritize the highest-leverage work and reduce friction—especially when scaling adoption.
-      </p>
-      <div class="meta">
-        <span class="tag">Customer empathy</span><span class="tag">Roadmaps</span><span class="tag">Cross-functional</span>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="experience">
-  <h2 class="section-title">Experience Snapshot</h2>
-  <p class="section-sub">
-    A few chapters where I scaled teams, modernized platforms, and delivered enterprise outcomes—built for reliability, speed, and customer trust.
-  </p>
+      <div class="card">
+        <!-- Workday -->
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;">
+          <div>
+            <p style="margin:0; color: rgba(11,15,23,.86); font-weight:900; font-size:16px;">Workday</p>
+            <p style="margin:6px 0 0; color: rgba(11,15,23,.72);">
+              Built and scaled an enterprise analytics platform embedded into HR/Finance workflows—balancing governance, performance,
+              and multi-tenant reliability while growing the organization from incubation to a large multi-team engine.
+            </p>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;">
+            <span class="tag">Scaled org to 100+*</span>
+            <span class="tag">Enterprise platform</span>
+          </div>
+        </div>
 
-  <div class="card">
-    <!-- Workday -->
-    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;">
-      <div>
-        <p style="margin:0; color: rgba(11,15,23,.86); font-weight:900; font-size:16px;">Workday</p>
-        <p style="margin:6px 0 0; color: rgba(11,15,23,.72);">
-          Built and scaled an enterprise analytics platform embedded into HR/Finance workflows—balancing governance, performance,
-          and multi-tenant reliability while growing the organization from incubation to a large multi-team engine.
+        <div class="meta" style="margin-top:12px;">
+          <span class="tag">Analytics platform</span>
+          <span class="tag">Multi-tenant</span>
+          <span class="tag">Governance</span>
+          <span class="tag">Performance</span>
+          <span class="tag">Reliability</span>
+          <span class="tag">Observability</span>
+          <span class="tag">Product partnership</span>
+        </div>
+
+        <hr style="border:0; border-top:1px solid rgba(11,15,23,.10); margin:18px 0;">
+
+        <!-- Thalamus -->
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;">
+          <div>
+            <p style="margin:0; color: rgba(11,15,23,.86); font-weight:900; font-size:16px;">Thalamus</p>
+            <p style="margin:6px 0 0; color: rgba(11,15,23,.72);">
+              Modernized platform integration and operating rigor for a healthcare SaaS product—shipping gateway capabilities and AI-assisted
+              workflow improvements with security, auditability, and predictable delivery.
+            </p>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;">
+            <span class="tag">0% attrition*</span>
+            <span class="tag">Healthcare SaaS</span>
+          </div>
+        </div>
+
+        <div class="meta" style="margin-top:12px;">
+          <span class="tag">Platform modernization</span>
+          <span class="tag">Integration</span>
+          <span class="tag">API gateway</span>
+          <span class="tag">Security</span>
+          <span class="tag">Observability</span>
+          <span class="tag">Execution discipline</span>
+          <span class="tag">Applied AI</span>
+        </div>
+
+        <hr style="border:0; border-top:1px solid rgba(11,15,23,.10); margin:18px 0;">
+
+        <!-- Aptology -->
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;">
+          <div>
+            <p style="margin:0; color: rgba(11,15,23,.86); font-weight:900; font-size:16px;">Aptology</p>
+            <p style="margin:6px 0 0; color: rgba(11,15,23,.72);">
+              Built the engineering foundation for a behavioral intelligence SaaS platform—stabilizing the core, improving delivery velocity,
+              and scaling the team and architecture for enterprise readiness.
+            </p>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;">
+            <span class="tag">0→team build*</span>
+            <span class="tag">SaaS scale-up</span>
+          </div>
+        </div>
+
+        <div class="meta" style="margin-top:12px;">
+          <span class="tag">SaaS architecture</span>
+          <span class="tag">Execution</span>
+          <span class="tag">Reliability</span>
+          <span class="tag">Data-driven product</span>
+          <span class="tag">ML/AI enablement</span>
+          <span class="tag">DevEx</span>
+          <span class="tag">Team scaling</span>
+        </div>
+
+        <hr style="border:0; border-top:1px solid rgba(11,15,23,.10); margin:18px 0;">
+
+        <!-- Taleo -->
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;">
+          <div>
+            <p style="margin:0; color: rgba(11,15,23,.86); font-weight:900; font-size:16px;">Taleo</p>
+            <p style="margin:6px 0 0; color: rgba(11,15,23,.72);">
+              Led delivery in high-growth enterprise phases—building teams, strengthening execution muscle, and driving customer outcomes
+              in large-scale HR technology environments.
+            </p>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;">
+            <span class="tag">Team scale-up*</span>
+            <span class="tag">Enterprise HR</span>
+          </div>
+        </div>
+
+        <div class="meta" style="margin-top:12px;">
+          <span class="tag">Enterprise SaaS</span>
+          <span class="tag">Org scaling</span>
+          <span class="tag">Execution</span>
+          <span class="tag">Customer outcomes</span>
+          <span class="tag">Operational rigor</span>
+          <span class="tag">Cross-functional</span>
+          <span class="tag">Platform mindset</span>
+        </div>
+
+        <p style="margin:18px 0 0; color:rgba(11,15,23,.50); font-size:12.5px;">
+          * Numbers intentionally summarized; details available in resume or conversation.
         </p>
       </div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;">
-        <span class="tag">Scaled org to 100+*</span>
-        <span class="tag">Enterprise platform</span>
-      </div>
-    </div>
+    </section>
 
-    <div class="meta" style="margin-top:12px;">
-      <span class="tag">Analytics platform</span>
-      <span class="tag">Multi-tenant</span>
-      <span class="tag">Governance</span>
-      <span class="tag">Performance</span>
-      <span class="tag">Reliability</span>
-      <span class="tag">Observability</span>
-      <span class="tag">Product partnership</span>
-    </div>
-
-    <hr style="border:0; border-top:1px solid rgba(11,15,23,.10); margin:18px 0;">
-
-    <!-- Thalamus -->
-    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;">
-      <div>
-        <p style="margin:0; color: rgba(11,15,23,.86); font-weight:900; font-size:16px;">Thalamus</p>
-        <p style="margin:6px 0 0; color: rgba(11,15,23,.72);">
-          Modernized platform integration and operating rigor for a healthcare SaaS product—shipping gateway capabilities and AI-assisted
-          workflow improvements with security, auditability, and predictable delivery.
-        </p>
-      </div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;">
-        <span class="tag">0% attrition*</span>
-        <span class="tag">Healthcare SaaS</span>
-      </div>
-    </div>
-
-    <div class="meta" style="margin-top:12px;">
-      <span class="tag">Platform modernization</span>
-      <span class="tag">Integration</span>
-      <span class="tag">API gateway</span>
-      <span class="tag">Security</span>
-      <span class="tag">Observability</span>
-      <span class="tag">Execution discipline</span>
-      <span class="tag">Applied AI</span>
-    </div>
-
-    <hr style="border:0; border-top:1px solid rgba(11,15,23,.10); margin:18px 0;">
-
-    <!-- Aptology -->
-    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;">
-      <div>
-        <p style="margin:0; color: rgba(11,15,23,.86); font-weight:900; font-size:16px;">Aptology</p>
-        <p style="margin:6px 0 0; color: rgba(11,15,23,.72);">
-          Built the engineering foundation for a behavioral intelligence SaaS platform—stabilizing the core, improving delivery velocity,
-          and scaling the team and architecture for enterprise readiness.
-        </p>
-      </div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;">
-        <span class="tag">0→team build*</span>
-        <span class="tag">SaaS scale-up</span>
-      </div>
-    </div>
-
-    <div class="meta" style="margin-top:12px;">
-      <span class="tag">SaaS architecture</span>
-      <span class="tag">Execution</span>
-      <span class="tag">Reliability</span>
-      <span class="tag">Data-driven product</span>
-      <span class="tag">ML/AI enablement</span>
-      <span class="tag">DevEx</span>
-      <span class="tag">Team scaling</span>
-    </div>
-
-    <hr style="border:0; border-top:1px solid rgba(11,15,23,.10); margin:18px 0;">
-
-    <!-- Taleo -->
-    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;">
-      <div>
-        <p style="margin:0; color: rgba(11,15,23,.86); font-weight:900; font-size:16px;">Taleo</p>
-        <p style="margin:6px 0 0; color: rgba(11,15,23,.72);">
-          Led delivery in high-growth enterprise phases—building teams, strengthening execution muscle, and driving customer outcomes
-          in large-scale HR technology environments.
-        </p>
-      </div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;">
-        <span class="tag">Team scale-up*</span>
-        <span class="tag">Enterprise HR</span>
-      </div>
-    </div>
-
-    <div class="meta" style="margin-top:12px;">
-      <span class="tag">Enterprise SaaS</span>
-      <span class="tag">Org scaling</span>
-      <span class="tag">Execution</span>
-      <span class="tag">Customer outcomes</span>
-      <span class="tag">Operational rigor</span>
-      <span class="tag">Cross-functional</span>
-      <span class="tag">Platform mindset</span>
-    </div>
-
-    <p style="margin:18px 0 0; color:rgba(11,15,23,.50); font-size:12.5px;">
-      * Numbers intentionally summarized; details available in resume or conversation.
-    </p>
-  </div>
-</section>
-
-
-    
     <section id="case-studies">
       <h2 class="section-title">Selected Case Studies</h2>
       <p class="section-sub">
         A few representative efforts that show how I approach platform architecture, scale, reliability, and customer outcomes.
-        (We can expand each into dedicated pages next.)
       </p>
 
- <div class="grid-3">
+      <div class="grid-3">
 
-  <a href="case-workday-analytics.html" class="card-link">
-    <div class="card">
-      <h3>Workday Analytics at Scale</h3>
-      <p>
-        Scaled enterprise analytics infrastructure supporting thousands of customers with multi-tenant reliability and governed metrics.
-      </p>
-      <div class="meta">
-        <span class="tag">Data platform</span>
-        <span class="tag">Multi-tenant</span>
-        <span class="tag">Performance</span>
-        <span class="tag">Governance</span>
-        <span class="tag">Org scale</span>
+        <a href="case-workday-analytics.html" class="card-link">
+          <div class="card">
+            <h3>Workday Analytics at Scale</h3>
+            <p>
+              Scaled enterprise analytics infrastructure supporting thousands of customers with multi-tenant reliability and governed metrics.
+            </p>
+            <div class="meta">
+              <span class="tag">Data platform</span>
+              <span class="tag">Multi-tenant</span>
+              <span class="tag">Performance</span>
+              <span class="tag">Governance</span>
+              <span class="tag">Org scale</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="case-workforce-planning.html" class="card-link">
+          <div class="card">
+            <h3>Workforce Planning Optimization</h3>
+            <p>
+              Designed constraint-based scheduling engine for large employers with explainable optimization and scalable architecture.
+            </p>
+            <div class="meta">
+              <span class="tag">Optimization</span>
+              <span class="tag">Constraints</span>
+              <span class="tag">Explainability</span>
+              <span class="tag">Scalability</span>
+              <span class="tag">Enterprise workflows</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="case-thalamus-gateway.html" class="card-link">
+          <div class="card">
+            <h3>Thalamus Platform Gateway + Applied AI</h3>
+            <p>
+              Modernized integration architecture and embedded AI into workflows with enterprise security and operational discipline.
+            </p>
+            <div class="meta">
+              <span class="tag">API gateway</span>
+              <span class="tag">Integration</span>
+              <span class="tag">Security</span>
+              <span class="tag">Observability</span>
+              <span class="tag">Applied AI</span>
+            </div>
+          </div>
+        </a>
+
       </div>
-    </div>
-  </a>
-
-  <a href="case-workforce-planning.html" class="card-link">
-    <div class="card">
-      <h3>Workforce Planning Optimization</h3>
-      <p>
-        Designed constraint-based scheduling engine for large employers with explainable optimization and scalable architecture.
-      </p>
-      <div class="meta">
-        <span class="tag">Optimization</span>
-        <span class="tag">Constraints</span>
-        <span class="tag">Explainability</span>
-        <span class="tag">Scalability</span>
-        <span class="tag">Enterprise workflows</span>
-      </div>
-    </div>
-  </a>
-
-  <a href="case-thalamus-gateway.html" class="card-link">
-    <div class="card">
-      <h3>Thalamus Platform Gateway + Applied AI</h3>
-      <p>
-        Modernized integration architecture and embedded AI into workflows with enterprise security and operational discipline.
-      </p>
-      <div class="meta">
-        <span class="tag">API gateway</span>
-        <span class="tag">Integration</span>
-        <span class="tag">Security</span>
-        <span class="tag">Observability</span>
-        <span class="tag">Applied AI</span>
-      </div>
-    </div>
-  </a>
-
-</div>
-
-
     </section>
 
     <section id="pov">
-  <h2 class="section-title">AI & Data POV</h2>
-  <p class="section-sub">
-    AI is not a feature layer — it is a systems transformation.  
-    Durable advantage comes from integrating intelligence into workflows, data architecture, and operational decision loops.
-  </p>
-
-  <div class="grid-3">
-    <div class="card">
-      <h3>AI as infrastructure, not a feature</h3>
-      <p>
-        Durable AI integration requires strong data contracts, evaluation frameworks, cost discipline,
-        and operational guardrails — not just model calls.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Agentic systems require operational rigor</h3>
-      <p>
-        Agentic AI introduces new failure modes. Observability, evaluation cycles,
-        and governance are critical to prevent drift and uncontrolled complexity in enterprise environments.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Analytics is the compounding asset</h3>
-      <p>
-        Governed metrics and embedded analytics create long-term defensibility.
-        AI amplifies value only when the data foundation is strong.
-      </p>
-    </div>
-  </div>
-
-  <!-- Applied Optimization Deep Dive -->
-
-  <div style="margin-top:48px;">
-    <h3 style="font-size:20px; font-weight:900;">
-      Applied Optimization at Enterprise Scale
-    </h3>
-
-    <p style="margin-top:10px; color: rgba(11,15,23,.75);">
-      As part of Workforce Planning initiatives, I led the design of a constraint-based scheduling engine
-      that translated demand forecasts, labor regulations, and employee preferences into optimized,
-      explainable schedules embedded directly into enterprise workflows.
-    </p>
-
-    <div class="card" style="margin-top:22px;">
-
-      <h4 style="margin:0 0 8px 0;">System Design & Modeling</h4>
-
-      <p style="color: rgba(11,15,23,.75);">
-        The engine integrated hard constraints (legal compliance, coverage requirements)
-        and soft constraints (fairness, workload balance, employee preferences) within a scalable
-        optimization framework. It produced ranked schedule options with transparent trade-off explanations,
-        enabling scenario simulation and managerial override pathways.
+      <h2 class="section-title">AI & Data POV</h2>
+      <p class="section-sub">
+        AI is not a feature layer — it is a systems transformation.
+        Durable advantage comes from integrating intelligence into workflows, data architecture, and operational decision loops.
       </p>
 
-      <div class="meta">
-        <span class="tag">Constraint modeling</span>
-        <span class="tag">Optimization solver</span>
-        <span class="tag">Hard vs soft constraints</span>
-        <span class="tag">Explainability</span>
-        <span class="tag">Scenario simulation</span>
-        <span class="tag">Enterprise scale</span>
+      <div class="grid-3">
+        <div class="card">
+          <h3>AI as infrastructure, not a feature</h3>
+          <p>
+            Durable AI integration requires strong data contracts, evaluation frameworks, cost discipline,
+            and operational guardrails — not just model calls.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Agentic systems require operational rigor</h3>
+          <p>
+            Agentic AI introduces new failure modes. Observability, evaluation cycles,
+            and governance are critical to prevent drift and uncontrolled complexity in enterprise environments.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Analytics is the compounding asset</h3>
+          <p>
+            Governed metrics and embedded analytics create long-term defensibility.
+            AI amplifies value only when the data foundation is strong.
+          </p>
+        </div>
       </div>
 
-      <hr style="border:0; border-top:1px solid rgba(11,15,23,.10); margin:18px 0;">
+      <div style="margin-top:48px;">
+        <h3 style="font-size:20px; font-weight:900;">
+          Applied Optimization at Enterprise Scale
+        </h3>
 
-      <h4 style="margin:0 0 8px 0;">Business & Operational Impact</h4>
+        <p style="margin-top:10px; color: rgba(11,15,23,.75);">
+          As part of Workforce Planning initiatives, I led the design of a constraint-based scheduling engine
+          that translated demand forecasts, labor regulations, and employee preferences into optimized,
+          explainable schedules embedded directly into enterprise workflows.
+        </p>
 
-      <p style="color: rgba(11,15,23,.75);">
-        Designed for large enterprise environments managing thousands of employees,
-        the system reduced manual scheduling effort, improved coverage consistency,
-        and operationalized compliance logic at scale — lowering risk while improving workforce agility.
-      </p>
+        <div class="card" style="margin-top:22px;">
+          <h4 style="margin:0 0 8px 0;">System Design & Modeling</h4>
 
-      <div class="meta">
-        <span class="tag">Operational efficiency</span>
-        <span class="tag">Risk mitigation</span>
-        <span class="tag">Enterprise HR</span>
-        <span class="tag">Workflow integration</span>
-        <span class="tag">Decision support</span>
+          <p style="color: rgba(11,15,23,.75);">
+            The engine integrated hard constraints (legal compliance, coverage requirements)
+            and soft constraints (fairness, workload balance, employee preferences) within a scalable
+            optimization framework. It produced ranked schedule options with transparent trade-off explanations,
+            enabling scenario simulation and managerial override pathways.
+          </p>
+
+          <div class="meta">
+            <span class="tag">Constraint modeling</span>
+            <span class="tag">Optimization solver</span>
+            <span class="tag">Hard vs soft constraints</span>
+            <span class="tag">Explainability</span>
+            <span class="tag">Scenario simulation</span>
+            <span class="tag">Enterprise scale</span>
+          </div>
+
+          <hr style="border:0; border-top:1px solid rgba(11,15,23,.10); margin:18px 0;">
+
+          <h4 style="margin:0 0 8px 0;">Business & Operational Impact</h4>
+
+          <p style="color: rgba(11,15,23,.75);">
+            Designed for large enterprise environments managing thousands of employees,
+            the system reduced manual scheduling effort, improved coverage consistency,
+            and operationalized compliance logic at scale — lowering risk while improving workforce agility.
+          </p>
+
+          <div class="meta">
+            <span class="tag">Operational efficiency</span>
+            <span class="tag">Risk mitigation</span>
+            <span class="tag">Enterprise HR</span>
+            <span class="tag">Workflow integration</span>
+            <span class="tag">Decision support</span>
+          </div>
+
+          <p style="margin-top:18px; color: rgba(11,15,23,.65); font-style: italic;">
+            This reinforced a core principle: intelligent systems create durable advantage only when embedded within
+            enterprise constraints — performance, governance, cost discipline, and user trust.
+          </p>
+        </div>
       </div>
-
-      <p style="margin-top:18px; color: rgba(11,15,23,.65); font-style: italic;">
-        This reinforced a core principle: intelligent systems create durable advantage only when embedded within
-        enterprise constraints — performance, governance, cost discipline, and user trust.
-      </p>
-
-    </div>
-  </div>
-
-</section>
-
+    </section>
 
     <section id="contact">
       <h2 class="section-title">Contact</h2>
