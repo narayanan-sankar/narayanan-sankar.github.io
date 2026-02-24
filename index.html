@@ -638,6 +638,37 @@
       box-shadow: inset 0 -0.35em 0 rgba(27,77,255,.08);
     }
 
+  
+    /* Hero proof + chips (v14) */
+    .hero-proof{
+      margin: 10px 0 0;
+      font-size: 14px;
+      line-height: 1.4;
+      color: rgba(11,15,23,.70);
+      font-weight: 700;
+      letter-spacing: .01em;
+    }
+    .hero-proof strong{
+      color: rgba(11,15,23,.86);
+      font-weight: 850;
+    }
+    .hero-chips{
+      margin-top: 10px;
+      display:flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .hero-chip{
+      font-size: 12.5px;
+      font-weight: 750;
+      color: rgba(11,15,23,.72);
+      border: 1px solid rgba(11,15,23,.10);
+      background: rgba(11,15,23,.02);
+      border-radius: 999px;
+      padding: 7px 11px;
+      white-space: nowrap;
+    }
+
   </style>
 </head>
 
@@ -684,6 +715,16 @@
               <p class="lead">
                 I build decision systems that improve real operations — governed metrics at scale, constraint-based optimization, and AI embedded into workflows. I’ve done it from incubation to enterprise scale and from startup teams to production hardening. I’m a thinker‑operator: I’ll frame the problem, choose the right abstractions, and ship what survives production.
               </p>
+
+              <div class="hero-proof" aria-label="Operator proof">
+                <strong>Operator proof:</strong> Built and ran decision systems end-to-end — modeling → data → evaluation loops → production operations.
+              </div>
+
+              <div class="hero-chips" aria-label="5-second AI impact">
+                <span class="hero-chip">Embedded decisions (not dashboards)</span>
+                <span class="hero-chip">Constraint-aware optimization</span>
+                <span class="hero-chip">Enterprise-grade reliability (SLOs)</span>
+              </div>
 
               <div class="impact-strip" aria-label="Decision-system impact">
                 <div class="impact-item"><span class="impact-k">Decision quality</span><span class="impact-v">Constraint modeling + explainable tradeoffs</span></div>
