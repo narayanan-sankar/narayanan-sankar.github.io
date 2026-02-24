@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sankar Narayanan | Engineering Leader</title>
   <meta name="description" content="Engineering leader building AI, analytics, and platform systems at scale. Case studies from Workday, workforce planning optimization, and Thalamus platform modernization." />
+  <meta property="og:title" content="Sankar Narayanan | Engineering Leader" />
+  <meta property="og:description" content="Engineering leader designing AI & analytics platforms for enterprise-scale systems." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://narayanan-sankar.github.io/" />
+  <meta property="og:image" content="og.png" />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="me" href="https://www.linkedin.com/in/sankar-narayanan-2645b27/" />
 
   <style>
     :root{
@@ -101,7 +108,7 @@
       color: var(--text);
       font-weight: 500;
       font-size: 14px;
-      opacity: .68;
+      opacity: .64;
     }
     .navlinks a:hover{ opacity: 1; text-decoration: none; }
 
@@ -276,6 +283,14 @@
       border-bottom: 5px solid rgba(27,77,255,.12); /* softer than a marker underline */
     }
 
+    .proof{
+      margin-top: 2px;
+      font-size: 13px;
+      color: rgba(11,15,23,.58);
+      font-weight: 650;
+      letter-spacing: .01em;
+    }
+
     .lead{
       margin: 0 0 16px;
       font-size: 16.5px;
@@ -313,32 +328,33 @@
       margin: 0;
       padding: 0;
       list-style: none;
-      border: 1px solid rgba(11,15,23,.08);
-      border-radius: 16px;
-      background: rgba(255,255,255,.72);
-      overflow: hidden;
+      border-top: 1px solid rgba(11,15,23,.08);
+      border-bottom: 1px solid rgba(11,15,23,.08);
+      border-radius: 0;
+      background: transparent;
     }
 
     .ledger li{
       display:flex;
-      justify-content:space-between;
-      gap: 16px;
-      padding: 12px 14px;
-      border-top: 1px solid rgba(11,15,23,.08);
-      align-items: baseline;
+      justify-content:flex-start;
+      gap: 20px;
+      padding: 12px 0;
+      border-top: 1px solid rgba(11,15,23,.06);
+      align-items: center;
     }
     .ledger li:first-child{ border-top: 0; }
 
     .ledger .num{
       font-weight: 820;
       letter-spacing: -0.01em;
-      min-width: 92px;
+      width: 120px;
+      flex: 0 0 120px;
     }
     .ledger .lbl{
       color: var(--muted2);
       font-weight: 700;
       font-size: 13px;
-      text-align: right;
+      text-align: left;
       flex: 1;
     }
 
@@ -368,7 +384,7 @@
       gap: 18px;
       padding: 18px 26px 22px;
       border-top: 1px solid rgba(11,15,23,.08);
-      background: rgba(255,255,255,.70);
+      background: rgba(255,255,255,.58);
       flex-wrap: wrap;
     }
 
@@ -397,8 +413,140 @@
       margin: 0;
     }
 
+    
+    .cta-link{
+      font-weight: 750;
+      font-size: 14px;
+      color: rgba(11,15,23,.78);
+      padding: 10px 4px;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+    .cta-link:hover{
+      color: rgba(11,15,23,.95);
+      text-decoration: none;
+      box-shadow: inset 0 -0.35em 0 rgba(27,77,255,.08);
+    }
+
+
+    
+    
+    .bridge-list{
+      margin-top: 14px;
+      padding-left: 18px;
+      display: grid;
+      gap: 8px;
+      color: rgba(11,15,23,.68);
+      font-size: 13.5px;
+      font-weight: 650;
+      line-height: 1.45;
+    }
+    .bridge-list li{
+      margin: 0;
+    }
+    .bridge-list strong{
+      color: rgba(11,15,23,.86);
+      font-weight: 850;
+      margin-right: 6px;
+    }.insight{
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed rgba(11,15,23,.12);
+      color: rgba(11,15,23,.70);
+      font-size: 13.5px;
+      font-weight: 650;
+    }
+    .reinforce{
+      color: rgba(11,15,23,.62);
+      font-weight: 650;
+    }
+
+
+    
+    .impact-strip{
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      padding: 12px 12px;
+      border: 1px solid rgba(11,15,23,.08);
+      background: rgba(255,255,255,.56);
+      border-radius: 14px;
+    }
+    .impact-item{
+      display: grid;
+      gap: 4px;
+      padding: 2px 2px;
+    }
+    .impact-k{
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(11,15,23,.52);
+      font-weight: 750;
+    }
+    .impact-v{
+      font-size: 13px;
+      color: rgba(11,15,23,.74);
+      font-weight: 650;
+      line-height: 1.35;
+    }
+    @media (max-width: 780px){
+      .impact-strip{ grid-template-columns: 1fr; }
+    }
+
+
+    
+    .lifecycle-note{
+      margin-top: 10px;
+      font-size: 13px;
+      color: rgba(11,15,23,.62);
+      font-weight: 650;
+      line-height: 1.45;
+    }
+
+
+    
+    .lifecycle-card{
+      margin-top: 12px;
+      padding: 12px 14px;
+      border: 1px solid rgba(11,15,23,.08);
+      background: rgba(255,255,255,.56);
+      border-radius: 14px;
+      display: grid;
+      gap: 8px;
+    }
+    .lc-head{
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(11,15,23,.52);
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+    .lc-row{
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      gap: 8px;
+      align-items: start;
+    }
+    .lc-stage{
+      font-size: 12px;
+      color: rgba(11,15,23,.62);
+      font-weight: 750;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .lc-desc{
+      font-size: 13.5px;
+      color: rgba(11,15,23,.74);
+      font-weight: 650;
+      line-height: 1.35;
+    }
+
+
     /* Sections */
-    section{ padding: 44px 0; }
+    section{ padding: 40px 0; }
     .section-title{
       margin: 0 0 10px;
       font-size: 22px;
@@ -508,6 +656,7 @@
         <div class="navlinks">
           <a href="#case-studies">Case Studies</a>
           <a href="#leadership">Leadership</a>
+          <a href="#lens">Strategic Lens</a>
           <a href="#pov">AI & Data POV</a>
           <a href="#contact">Contact</a>
           <a class="btn" href="Sankar_Narayanan.pdf" target="_blank" rel="noopener">Resume</a>
@@ -527,23 +676,36 @@
               <div class="hero-rule" aria-hidden="true"></div>
               <div class="eyebrow">ENGINEERING LEADER</div>
               <h1 class="hero-title">
-                Designing <span class="hero-accent">AI &amp; analytics platforms</span><br/>
-                for <span class="hero-soft">enterprise-scale systems</span>.
+                Designing <span class="hero-accent">AI &amp; analytics decision systems</span><br/>
+                for <span class="hero-soft">enterprise-scale operations</span>.
               </h1>
             </div>
 
               <p class="lead">
-                I build and scale engineering organizations that modernize enterprise architecture, ship durable data platforms,
-                and <strong>embed AI into real customer workflows</strong>—balancing system integrity with product execution
-                and operational rigor.
+                I build decision systems that improve real operations — governed metrics at scale, constraint-based optimization, and AI embedded into workflows. I’ve done it from incubation to enterprise scale and from startup teams to production hardening. I’m a thinker‑operator: I’ll frame the problem, choose the right abstractions, and ship what survives production.
               </p>
+
+              <div class="impact-strip" aria-label="Decision-system impact">
+                <div class="impact-item"><span class="impact-k">Decision quality</span><span class="impact-v">Constraint modeling + explainable tradeoffs</span></div>
+                <div class="impact-item"><span class="impact-k">Operational reliability</span><span class="impact-v">Evaluation loops + production guardrails</span></div>
+                <div class="impact-item"><span class="impact-k">Enterprise adoption</span><span class="impact-v">Embedded decisions inside workflows</span></div>
+              </div>
+
+
+              
+              <ul class="bridge-list" aria-label="Highlights">
+                <li><strong>Workday:</strong> governed metrics + semantic consistency → decision‑grade analytics at multi‑tenant scale.</li>
+                <li><strong>Workforce Planning:</strong> constraint modeling + ranking → explainable schedules and compliance‑aware tradeoffs.</li>
+                <li><strong>Thalamus:</strong> platform rigor + evaluation loops → AI‑assisted workflows that survive production.</li>
+              </ul>
+
             </div>
 
             <!-- RIGHT -->
             <aside class="hero-right" aria-label="Executive proof ledger">
               <div class="glance-head">
                 <div class="glance-title">At a glance</div>
-                <div class="glance-pill">Enterprise scale operator</div>
+                <div class="glance-pill">Startup → Scale operator</div>
               </div>
 
               <ul class="ledger" aria-label="Key metrics">
@@ -556,10 +718,31 @@
               <hr class="mini-divider" />
 
               <ul class="highlights" aria-label="Signature highlights">
-                <li><strong>Workday Analytics:</strong> multi-tenant analytics platform with governed metrics and enterprise reliability.</li>
-                <li><strong>Workforce Planning:</strong> constraint-based optimization for complex scheduling and labor compliance.</li>
-                <li><strong>Thalamus:</strong> platform modernization + integration gateway; AI-driven workflow assistance.</li>
+                <li><strong>Workday Analytics:</strong> Governed metrics + semantic consistency → decision‑grade analytics at multi‑tenant scale.</li>
+                <li><strong>Workforce Planning:</strong> Constraint modeling + ranking → compliance‑aware schedules with explainable tradeoffs.</li>
+                <li><strong>Thalamus:</strong> Platform rigor + evaluation loops → AI‑assisted workflows that survive production.</li>
               </ul>
+            
+              <div class="lifecycle-card" aria-label="Startup to Scale Lifecycle">
+                <div class="lc-head">Startup → Scale Lifecycle</div>
+                <div class="lc-row">
+                  <span class="lc-stage">Incubation</span>
+                  <span class="lc-desc"><strong>Workday:</strong> grew Analytics from incubation into governed, decision‑grade infrastructure.</span>
+                </div>
+                <div class="lc-row">
+                  <span class="lc-stage">0 → 1</span>
+                  <span class="lc-desc"><strong>Aptology:</strong> stabilized core, scaled team, and moved platform toward production readiness.</span>
+                </div>
+                <div class="lc-row">
+                  <span class="lc-stage">Scale</span>
+                  <span class="lc-desc"><strong>Thalamus:</strong> modernized platform and embedded AI workflows with evaluation loops.</span>
+                </div>
+                <div class="lc-row">
+                  <span class="lc-stage">Growth</span>
+                  <span class="lc-desc"><strong>Taleo:</strong> shipped in high‑growth HR SaaS—execution discipline and customer outcomes at scale.</span>
+                </div>
+              </div>
+
             </aside>
           </div>
 
@@ -577,66 +760,114 @@
             <div class="cta">
               <a class="btn primary" href="#case-studies">View Case Studies</a>
               <a class="btn" href="Sankar_Narayanan.pdf" target="_blank" rel="noopener">Download Resume</a>
-              <a class="btn" href="https://www.linkedin.com/in/sankar-narayanan-2645b27/" target="_blank" rel="noopener">LinkedIn</a>
+              <a class="cta-link" href="https://www.linkedin.com/in/sankar-narayanan-2645b27/" target="_blank" rel="noopener">LinkedIn ↗</a>
             </div>
           </div>
         </div>
       </header>
     </div>
 
+    <section id="lens" style="padding: 22px 0 10px;">
+      <h2 class="section-title">Strategic Lens</h2>
+      <p class="section-sub">
+        Across two decades — from scaling Workday Analytics to building constraint-based Workforce Planning — I’ve learned that enterprise leverage rarely comes from surface automation. It comes from improving how the system makes decisions in production — and then operationalizing it with discipline.
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Model the decision, not just the workflow</h3>
+          <p>
+            In Workforce Planning, the breakthrough wasn’t automating schedule creation — it was explicitly modeling hard constraints
+            (labor laws, coverage requirements) and soft constraints (fairness, preferences), then making tradeoffs explainable.
+          </p>
+          <p class="insight"><strong>AI lesson:</strong> models help, but value comes from the constraint model + decision loop.</p>
+          <div class="meta">
+            <span class="tag">Constraint modeling</span><span class="tag">Tradeoffs</span><span class="tag">Explainability</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Govern the metric, or don’t trust the AI</h3>
+          <p>
+            At Workday Analytics, scale only worked because semantic consistency and governance were designed in — not added later.
+            A trusted metrics layer turned reporting into decision infrastructure for thousands of customers.
+          </p>
+          <p class="insight"><strong>AI lesson:</strong> AI amplifies outcomes only when the measurement layer is trusted.</p>
+          <div class="meta">
+            <span class="tag">Semantic layer</span><span class="tag">Governance</span><span class="tag">Multi-tenant</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Make AI survivable under real usage</h3>
+          <p>
+            At Thalamus, modernizing security, integration reliability, and observability wasn’t glamorous work — but it enabled everything that followed,
+            including AI-assisted workflows embedded in interview operations.
+          </p>
+          <p class="insight"><strong>AI lesson:</strong> guardrails + observability are what turn pilots into durable features.</p>
+          <div class="meta">
+            <span class="tag">Observability</span><span class="tag">Guardrails</span><span class="tag">Reliability</span>
+          </div>
+        </div>
+</div>
+    </section>
+
+
     <section id="leadership" style="padding: 34px 0 0;">
       <h2 class="section-title">Leadership Impact</h2>
       <p class="section-sub">
-        I build strong teams, scale engineering systems, and deliver outcomes with operational discipline—especially in enterprise environments.
+        I’ve grown teams from early-stage builds to 100+ engineers, and I’ve learned that scaling people is harder than scaling systems. I focus on building leadership depth, clear ownership, and execution cadence that holds under pressure.
       </p>
 
       <div class="grid-2">
         <div class="card">
-          <h3>Scaled organizations across multiple stages</h3>
+          <h3>Scale decision-making, not just headcount</h3>
           <p>
-            I’ve repeatedly grown teams from early-stage builds to multi-team orgs—scaling execution capacity while improving engineering quality and leadership depth.
+            As teams grow, the bottleneck becomes decisions. I clarify ownership, tighten decision loops, and build leaders who can
+            run their domains with high judgment and low drama.
           </p>
           <div class="meta">
-            <span class="tag">Org design</span><span class="tag">Hiring</span><span class="tag">Leadership bench</span>
+            <span class="tag">Decision loops</span><span class="tag">Ownership</span><span class="tag">Leadership bench</span>
           </div>
         </div>
 
         <div class="card">
-          <h3>Built high-retention, high-ownership teams</h3>
+          <h3>Make quality the default path</h3>
           <p>
-            At Thalamus, we operated with strong ownership and delivery discipline—achieving <strong>0% attrition</strong> during my tenure while modernizing the platform and shipping customer-facing capabilities.
+            CI/CD, SLOs, incident learning, and architecture governance turn “quality” into a system — so throughput scales without heroics.
           </p>
           <div class="meta">
-            <span class="tag">Culture</span><span class="tag">Execution</span><span class="tag">Retention</span>
+            <span class="tag">SLOs</span><span class="tag">Incident learning</span><span class="tag">Governance</span>
           </div>
         </div>
 
         <div class="card">
-          <h3>Enterprise-grade delivery & operational rigor</h3>
+          <h3>Run outcomes like products</h3>
           <p>
-            I emphasize reliability, observability, security, and cost discipline—building systems and teams that can support enterprise SLAs and rapid growth.
+            I align engineering and product on measurable outcomes—latency, reliability, adoption, and cost—so the roadmap stays grounded
+            in customer value and tradeoffs stay explicit.
           </p>
           <div class="meta">
-            <span class="tag">Reliability</span><span class="tag">Observability</span><span class="tag">Security</span>
+            <span class="tag">Customer outcomes</span><span class="tag">Tradeoffs</span><span class="tag">Operating cadence</span>
           </div>
         </div>
 
         <div class="card">
-          <h3>Platform + product partnership</h3>
+          <h3>Hire for slope and ownership</h3>
           <p>
-            I partner tightly with Product, GTM, and Customer Success to prioritize the highest-leverage work and reduce friction—especially when scaling adoption.
+            I hire people who learn fast, take responsibility end-to-end, and improve the system—not just ship tickets. Durable throughput beats spikes.
           </p>
           <div class="meta">
-            <span class="tag">Customer empathy</span><span class="tag">Roadmaps</span><span class="tag">Cross-functional</span>
+            <span class="tag">Hiring</span><span class="tag">Ownership</span><span class="tag">Durable throughput</span>
           </div>
         </div>
-      </div>
+</div>
     </section>
 
     <section id="experience">
       <h2 class="section-title">Experience Snapshot</h2>
       <p class="section-sub">
-        A few chapters where I scaled teams, modernized platforms, and delivered enterprise outcomes—built for reliability, speed, and customer trust.
+        A few chapters where I scaled teams, modernized platforms, and delivered outcomes with measurable customer impact.
       </p>
 
       <div class="card">
@@ -645,8 +876,8 @@
           <div>
             <p style="margin:0; color: rgba(11,15,23,.86); font-weight:900; font-size:16px;">Workday</p>
             <p style="margin:6px 0 0; color: rgba(11,15,23,.72);">
-              Built and scaled an enterprise analytics platform embedded into HR/Finance workflows—balancing governance, performance,
-              and multi-tenant reliability while growing the organization from incubation to a large multi-team engine.
+              Built and scaled an multi-tenant analytics platform embedded into HR/Finance workflows—balancing governance, performance,
+              and multi-tenant reliability while growing the organization from incubation to a large multi-team engine. <span class="reinforce">This reinforced for me that governed metrics become decision infrastructure.</span>
             </p>
           </div>
           <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;">
@@ -673,7 +904,7 @@
             <p style="margin:0; color: rgba(11,15,23,.86); font-weight:900; font-size:16px;">Thalamus</p>
             <p style="margin:6px 0 0; color: rgba(11,15,23,.72);">
               Modernized platform integration and operating rigor for a healthcare SaaS product—shipping gateway capabilities and AI-assisted
-              workflow improvements with security, auditability, and predictable delivery.
+              workflow improvements with security, auditability, and predictable delivery. <span class="reinforce">This reinforced that AI only sticks when it’s survivable in production.</span>
             </p>
           </div>
           <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;">
@@ -700,7 +931,7 @@
             <p style="margin:0; color: rgba(11,15,23,.86); font-weight:900; font-size:16px;">Aptology</p>
             <p style="margin:6px 0 0; color: rgba(11,15,23,.72);">
               Built the engineering foundation for a behavioral intelligence SaaS platform—stabilizing the core, improving delivery velocity,
-              and scaling the team and architecture for enterprise readiness.
+              and scaling the team and architecture for production readiness. <span class="reinforce">This reinforced the importance of clear ownership and operating cadence as teams scale.</span>
             </p>
           </div>
           <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;">
@@ -727,7 +958,7 @@
             <p style="margin:0; color: rgba(11,15,23,.86); font-weight:900; font-size:16px;">Taleo</p>
             <p style="margin:6px 0 0; color: rgba(11,15,23,.72);">
               Led delivery in high-growth enterprise phases—building teams, strengthening execution muscle, and driving customer outcomes
-              in large-scale HR technology environments.
+              in large-scale HR technology environments. <span class="reinforce">This reinforced that customer outcomes win when execution is grounded in measurable signals.</span>
             </p>
           </div>
           <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;">
@@ -780,7 +1011,7 @@
           <div class="card">
             <h3>Workforce Planning Optimization</h3>
             <p>
-              Designed constraint-based scheduling engine for large employers with explainable optimization and scalable architecture.
+              Designed a constraint-based scheduling engine where the leverage came from modeling constraints and tradeoffs — not just automating schedule creation.
             </p>
             <div class="meta">
               <span class="tag">Optimization</span>
@@ -814,32 +1045,28 @@
     <section id="pov">
       <h2 class="section-title">AI & Data POV</h2>
       <p class="section-sub">
-        AI is not a feature layer — it is a systems transformation.
-        Durable advantage comes from integrating intelligence into workflows, data architecture, and operational decision loops.
+        My strongest AI outcomes came from building decision systems first — then applying models where they reduce friction or improve judgment. Across analytics and workforce planning, the pattern is consistent: data contracts, evaluation, and guardrails decide whether AI compounds or collapses.
       </p>
 
       <div class="grid-3">
         <div class="card">
           <h3>AI as infrastructure, not a feature</h3>
           <p>
-            Durable AI integration requires strong data contracts, evaluation frameworks, cost discipline,
-            and operational guardrails — not just model calls.
+            When we introduced AI-assisted workflows, the hard part wasn’t model integration — it was evaluation loops, cost controls, and failure-mode handling. Production AI is an operational discipline.
           </p>
         </div>
 
         <div class="card">
           <h3>Agentic systems require operational rigor</h3>
           <p>
-            Agentic AI introduces new failure modes. Observability, evaluation cycles,
-            and governance are critical to prevent drift and uncontrolled complexity in enterprise environments.
+            As systems become more autonomous, failure modes multiply — drift, partial execution, silent degradation. I design observability and evaluation cadence into the system from day one.
           </p>
         </div>
 
         <div class="card">
           <h3>Analytics is the compounding asset</h3>
           <p>
-            Governed metrics and embedded analytics create long-term defensibility.
-            AI amplifies value only when the data foundation is strong.
+            At Workday, analytics wasn’t a reporting feature — it became compounding decision infrastructure. Governed metrics and semantic consistency created defensibility; AI only amplifies value when the measurement layer is trusted.
           </p>
         </div>
       </div>
@@ -879,7 +1106,7 @@
           <h4 style="margin:0 0 8px 0;">Business & Operational Impact</h4>
 
           <p style="color: rgba(11,15,23,.75);">
-            Designed for large enterprise environments managing thousands of employees,
+            Designed for large high-scale environments managing thousands of employees,
             the system reduced manual scheduling effort, improved coverage consistency,
             and operationalized compliance logic at scale — lowering risk while improving workforce agility.
           </p>
@@ -906,7 +1133,7 @@
 
       <div class="contact">
         <a class="btn primary" href="mailto:slsankargm@gmail.com">Email</a>
-        <a class="btn" href="https://www.linkedin.com/in/sankar-narayanan-2645b27/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="cta-link" href="https://www.linkedin.com/in/sankar-narayanan-2645b27/" target="_blank" rel="noopener">LinkedIn ↗</a>
         <a class="btn" href="Sankar_Narayanan.pdf" target="_blank" rel="noopener">Resume</a>
       </div>
     </section>
